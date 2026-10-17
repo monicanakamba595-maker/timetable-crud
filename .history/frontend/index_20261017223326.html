@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Timetable</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 1000px; margin: 20px auto; padding: 0 10px; }
+    form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 20px; }
+    input { padding: 8px; }
+    button { padding: 8px 12px; cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: left; font-size: 14px; }
+    th { background: #eee; }
+  </style>
+</head>
+<body>
+  <h1>Student Timetable & Goals</h1>
+
+  <form id="form">
+    <input type="hidden" id="id">
+    <input id="course_code" placeholder="Course code (required)" required>
+    <input id="course_name" placeholder="Course name">
+    <input id="lecturer" placeholder="Lecturer">
+    <input id="day_of_week" placeholder="Day (e.g. Monday)">
+    <input id="start_time" placeholder="Start (08:00)">
+    <input id="end_time" placeholder="End (10:00)">
+    <input id="venue" placeholder="Venue">
+    <input id="goal" placeholder="Goal">
+    <button type="submit" id="saveBtn">Add</button>
+    <button type="button" id="cancelBtn" style="display:none">Cancel edit</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Code</th><th>Course</th><th>Lecturer</th><th>Day</th>
+        <th>Start</th><th>End</th><th>Venue</th><th>Goal</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
